@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/media-cms-core/!svn/ver/1374/trunk/code/source/plugin/crx-daren
+END
+background.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/media-cms-core/!svn/ver/348/trunk/code/source/plugin/crx-daren/background.html
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/media-cms-core/!svn/ver/1374/trunk/code/source/plugin/crx-daren/package.json
+END
+unnamed.patch
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/media-cms-core/!svn/ver/348/trunk/code/source/plugin/crx-daren/unnamed.patch
+END
+popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/media-cms-core/!svn/ver/348/trunk/code/source/plugin/crx-daren/popup.html
+END
+.babelrc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/media-cms-core/!svn/ver/1374/trunk/code/source/plugin/crx-daren/.babelrc
+END
+package-lock.json
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/media-cms-core/!svn/ver/348/trunk/code/source/plugin/crx-daren/package-lock.json
+END
+manifest.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/media-cms-core/!svn/ver/1283/trunk/code/source/plugin/crx-daren/manifest.json
+END
