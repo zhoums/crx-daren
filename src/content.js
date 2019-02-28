@@ -78,6 +78,7 @@ $(function() {
           }, function(response) {
             // console.log('sucLoginBtn',response)
             configData = response;
+            console.log('configData:', configData)
             $("#rollBackData").trigger("click")
           });
         } else {
@@ -139,11 +140,16 @@ $(function() {
     console.log('Begin post data....', configData);
 
     //爬数据
-    chrome.runtime.sendMessage({
-      greeting: "spider",
-      interFaceList: configData.result,
-      head: headObj
-    });
+    if (configData.status > -1) {
+      chrome.runtime.sendMessage({
+        greeting: "spider",
+        interFaceList: configData.result,
+        head: headObj
+      });
+    } else {
+      alert('获取配置文件出错')
+    }
+
     chrome.runtime.sendMessage({
       greeting: "allData",
       tk: tk,

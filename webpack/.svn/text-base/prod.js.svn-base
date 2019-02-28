@@ -6,7 +6,6 @@ const babelpolyfill = require("babel-polyfill");
 
 
 module.exports = webpackMerge(common, {
-  watch: true,
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')

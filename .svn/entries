@@ -185,13 +185,6 @@ dir
 
 add
 
-dist
-dir
-
-
-
-add
-
 package.json
 file
 1419
@@ -226,8 +219,12 @@ willbe016
 
 925
 
-images
+dist
 dir
+
+
+
+add
 
 .gitignore
 file
@@ -235,6 +232,9 @@ file
 
 
 add
+
+images
+dir
 
 popup.html
 file
@@ -312,14 +312,14 @@ dir
 
 manifest.json
 file
-1419
+1420
 
 
 
-2019-02-28T15:05:46.000000Z
-580cf8c44e760fff912e23a16fa332d7
-2019-02-28T15:12:45.432163Z
-1419
+2019-02-28T15:23:18.000000Z
+66bc7a6e5b8eb15cc02f977f35286d73
+2019-02-28T15:30:04.682112Z
+1420
 willbe016
 
 
@@ -342,5 +342,5 @@ willbe016
 
 
 
-910
+913
 

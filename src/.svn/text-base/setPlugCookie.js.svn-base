@@ -88,6 +88,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   //爬数开始 3个if
   //提前获取config内容
   if (request.greeting == "triggerConfig") {
+    chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    }, function(tab) {
+      // console.log('tab', tab)
+      currentTabId = tab[0].id
+    });
     console.log("正在获取配置数据，请稍候。。。")
     let config;
     $.ajax({
@@ -361,6 +368,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       active: true,
       currentWindow: true
     }, function(tab) {
+      // console.log('tab', tab)
       let tabId = currentTabId || tab[0].id;
       if (currentTabId) {
         tabId = currentTabId;

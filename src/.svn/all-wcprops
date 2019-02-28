@@ -7,19 +7,19 @@ config.js
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/media-cms-core/!svn/ver/1389/trunk/code/source/plugin/crx-daren/src/config.js
+/svn/media-cms-core/!svn/ver/1423/trunk/code/source/plugin/crx-daren/src/config.js
 END
 content.js
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svn/media-cms-core/!svn/ver/1389/trunk/code/source/plugin/crx-daren/src/content.js
+/svn/media-cms-core/!svn/ver/1423/trunk/code/source/plugin/crx-daren/src/content.js
 END
 setPlugCookie.js
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/media-cms-core/!svn/ver/1392/trunk/code/source/plugin/crx-daren/src/setPlugCookie.js
+/svn/media-cms-core/!svn/ver/1423/trunk/code/source/plugin/crx-daren/src/setPlugCookie.js
 END
 util.js
 K 25
