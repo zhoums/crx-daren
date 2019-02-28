@@ -1,15 +1,15 @@
 10
 
 dir
-1378
+1418
 http://willbe016@121.40.96.81:8008/svn/media-cms-core/trunk/code/source/plugin/crx-daren
 http://willbe016@121.40.96.81:8008/svn/media-cms-core
 
 
 
-2019-02-20T09:34:45.455501Z
-1374
-bill
+2019-02-23T06:18:31.167000Z
+1394
+willbe016
 
 
 
@@ -26,8 +26,12 @@ bill
 
 bd1c89e6-5927-11e8-bde5-9bd24222ff96
 
-cfg
-dir
+yarn-error.log
+file
+0
+
+
+add
 
 background.html
 file
@@ -63,17 +67,18 @@ bill
 
 664
 
-package.json
+crx-daren   prod（内部版本号3，版本号1.2.0 fixed旧版浏览器问题）.zip
 file
 
 
 
 
-2019-02-20T16:20:36.000000Z
-bf98cf3b67df870d1dcf6fd73b5f44d6
-2019-02-20T09:34:45.455501Z
-1374
-bill
+2019-02-23T06:14:06.000000Z
+944992c218cb9c9fccb30efa63e58f33
+2019-02-23T06:18:31.167000Z
+1394
+willbe016
+has-props
 
 
 
@@ -94,11 +99,7 @@ bill
 
 
 
-
-893
-
-images
-dir
+135306
 
 unnamed.patch
 file
@@ -134,79 +135,11 @@ bill
 
 6234
 
-popup.html
-file
-
-
-
-
-2018-11-11T13:43:47.000000Z
-02cf2e7a2ec6eeb9615348908c28348e
-2018-08-19T05:03:42.443984Z
-348
-bill
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-968
-
 src
 dir
 
 css
 dir
-
-.babelrc
-file
-
-
-
-
-2019-02-20T16:20:36.000000Z
-f9f3986f7fb4f5afca148243539cd899
-2019-02-20T09:34:45.455501Z
-1374
-bill
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27
 
 package-lock.json
 file
@@ -242,19 +175,151 @@ bill
 
 105161
 
-js
+cfg
 dir
 
-manifest.json
+.git
+dir
+
+
+
+add
+
+dist
+dir
+
+
+
+add
+
+package.json
+file
+1419
+
+
+
+2019-02-28T15:05:57.000000Z
+83b17a2c00c5340d8dd4ef619d1ced9b
+2019-02-28T15:12:45.432163Z
+1419
+willbe016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+925
+
+images
+dir
+
+.gitignore
+file
+0
+
+
+add
+
+popup.html
 file
 
 
 
 
-2019-01-31T16:47:46.000000Z
-51aa3fcc7c29a8cca2826119f93ec6bc
-2019-01-31T16:48:07.730123Z
-1283
+2018-11-11T13:43:47.000000Z
+02cf2e7a2ec6eeb9615348908c28348e
+2018-08-19T05:03:42.443984Z
+348
+bill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+968
+
+.babelrc
+file
+
+
+
+
+2019-02-20T16:20:36.000000Z
+f9f3986f7fb4f5afca148243539cd899
+2019-02-20T09:34:45.455501Z
+1374
+bill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27
+
+js
+dir
+
+webpack
+dir
+
+manifest.json
+file
+1419
+
+
+
+2019-02-28T15:05:46.000000Z
+580cf8c44e760fff912e23a16fa332d7
+2019-02-28T15:12:45.432163Z
+1419
 willbe016
 
 

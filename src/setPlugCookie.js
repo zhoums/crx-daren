@@ -14,6 +14,7 @@ import {
   moli_host,
   frontEndHost
 } from './checkVersion'
+import "babel-polyfill";
 
 let versi = versionObj();
 
@@ -24,10 +25,10 @@ let currentTabId;
 let allDataPage = 1; //全量获取的页码
 let lastPage = false; //全量获取最后一页
 let allDataTotalPage = 1; //全量获取总页数
+let agentVersion = navigator.userAgent.toLowerCase().match(/chrome\/[\d.]+/gi).toString().match(/[\d]{1,}/g);
+let bigVersion = Number(agentVersion[0]);
 
-
-
-
+let kui = bigVersion >= 72 ? ["blocking", "requestHeaders", "extraHeaders"] : ["blocking", "requestHeaders"];
 
 //设置refer
 chrome.webRequest.onBeforeSendHeaders.addListener(
@@ -56,7 +57,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
   }, {
     urls: ['https://*.taobao.com/*']
   },
-  ["blocking", "requestHeaders", "extraHeaders"]
+  kui
 );
 
 

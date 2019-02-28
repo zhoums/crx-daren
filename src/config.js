@@ -13,11 +13,10 @@ let config = {
   max_interval: 80,
   min_interval: 25,
 }
-console.log(process.env.NODE_ENV)
 
 
-export const app_version = '1.2.0'; //恢复检测插件更新
-export const app_verSeq = 2;
+export const app_version = '1.2.1'; //根据浏览器版本设置referer
+export const app_verSeq = 4;
 export const allDataPageSize = 20; //全量获取每页的contentID数目
 
 export default config;

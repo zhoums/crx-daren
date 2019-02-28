@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/media-cms-core/!svn/ver/1392/trunk/code/source/plugin/crx-daren/webpack
+END
+common-dev.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/media-cms-core/!svn/ver/1389/trunk/code/source/plugin/crx-daren/webpack/common-dev.js
+END
+prod.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/media-cms-core/!svn/ver/1392/trunk/code/source/plugin/crx-daren/webpack/prod.js
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/media-cms-core/!svn/ver/1389/trunk/code/source/plugin/crx-daren/webpack/common.js
+END
+local.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/media-cms-core/!svn/ver/1389/trunk/code/source/plugin/crx-daren/webpack/local.js
+END
+dev.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/media-cms-core/!svn/ver/1389/trunk/code/source/plugin/crx-daren/webpack/dev.js
+END

@@ -3,36 +3,6 @@ $(function() {
     greeting: "checkVersion",
   });
 
-  //设置refer
-  chrome.webRequest.onBeforeSendHeaders.addListener(
-    function(details) {
-      if (details.type === 'xmlhttprequest') {
-        var exists = false;
-        for (var i = 0; i < details.requestHeaders.length; ++i) {
-          if (details.requestHeaders[i].name === 'Referer') {
-            exists = true;
-            details.requestHeaders[i].value = 'https://we.taobao.com/';
-            break;
-          }
-        }
-
-        if (!exists) {
-          details.requestHeaders.push({
-            name: 'Referer',
-            value: 'https://we.taobao.com/'
-          });
-        }
-
-        return {
-          requestHeaders: details.requestHeaders
-        };
-      }
-    }, {
-      urls: ['https://*.taobao.com/*']
-    },
-    ["blocking", "requestHeaders", "extraHeaders"]
-  );
-
   //监听版本更新信息
   chrome.extension.onRequest.addListener(
     function(request, sender, sendResponse) {

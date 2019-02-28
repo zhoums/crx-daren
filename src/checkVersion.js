@@ -23,9 +23,7 @@ if (process.env.NODE_ENV == "local") {
   // frontEndHost = config.frontEndHost_dev
   frontEndHost = config.tbPlatform;
 } else if (process.env.NODE_ENV == "production") {
-  console.log('djla', config.backEndHost_pro)
   moli_host = config.backEndHost_pro
-  console.log('djla', moli_host)
 
   // frontEndHost = config.frontEndHost_pro
   frontEndHost = config.tbPlatform
