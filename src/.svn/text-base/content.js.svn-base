@@ -2,7 +2,13 @@ $(function() {
   chrome.runtime.sendMessage({
     greeting: "checkVersion",
   });
-
+  $.ajax({
+    url: 'https://sycm.taobao.com/custom/menu/getPersonalView.json',
+    // async: false,
+    success: function(res) {
+      console.log('ldslkd', res)
+    }
+  })
   //监听版本更新信息
   chrome.extension.onRequest.addListener(
     function(request, sender, sendResponse) {
@@ -20,6 +26,15 @@ $(function() {
           greeting: "allData",
           tk: tk,
         })
+      }
+      if (request.greeting == 'alarmToLoginSycm') {
+        $("#smartTip").hide();
+        $(".plug-step-win").hide();
+        //setTimeout确保先关闭提示再alert;
+        setTimeout(function() {
+          alert('未收到平台确认信息，请登录创作平台后重新操作。');
+          // refreshAutoList();
+        }, 0)
       }
     });
 
@@ -48,83 +63,87 @@ $(function() {
     rollBackDataBtn = document.getElementById('rollBackData');
 
   sucLoginBtn.addEventListener('eventByLogin', function() {
-    $.ajax({
-      url: 'https://sycm.taobao.com/custom/menu/getPersonalView.json',
-      async: false,
-      success: function(res) {
-        // let ten = tenMin();
-        if (res.code == 0) {
-          $(".window-panel").height(260)
-          $("#step-login").removeClass("step-current");
-          $("#step-data").addClass("step-current");
-          $(".window-panel").find(".title").find("h3").html('正在智能回填数据');
-          $("#s-step-tip-2").hide();
-          $("#s-step-tip-3").show();
+    $(".window-panel").height(260)
+    $("#step-login").removeClass("step-current");
+    $("#step-data").addClass("step-current");
+    $(".window-panel").find(".title").find("h3").html('正在智能回填数据');
+    $("#s-step-tip-2").hide();
+    $("#s-step-tip-3").show();
 
-          let darenId = $('#smartSet').attr("data-darenid") || 10000,
-            darenNameCN = $('#smartSet').attr("data-darenname"),
-            darenName = encodeURIComponent(darenNameCN),
-            sid = $('#smartSet').attr("data-sid") || 10000,
-            tk = $('#smartSet').attr("data-token") || 10000;
-          $("#smartTip").html(`您即将要做智能回填的是达人“${darenNameCN}”，请确保当前创作平台登录的是该达人，否则智能回填无法生效。`).show();
-          setTimeout(function() {
-            $("#smartTip").hide();
-            $(".plug-step-win").hide();
-          }, 13 * 1000 * 60)
-          console.log("开始获取配置数据，请稍候。。。")
-          chrome.runtime.sendMessage({
-            greeting: "triggerConfig",
-            head: "tk=" + tk + "&darenId=" + darenId + "&darenName=" + darenName + "&sid=" + sid
-          }, function(response) {
-            // console.log('sucLoginBtn',response)
-            configData = response;
-            console.log('configData:', configData)
-            $("#rollBackData").trigger("click")
-          });
-        } else {
-          alert('未收到平台确认信息，请重新登录创作平台。');
-        }
-      }
-    })
+    let darenId = $('#smartSet').attr("data-darenid") || 10000,
+      darenNameCN = $('#smartSet').attr("data-darenname"),
+      darenName = encodeURIComponent(darenNameCN),
+      sid = $('#smartSet').attr("data-sid") || 10000,
+      tk = $('#smartSet').attr("data-token") || 10000;
+    $("#smartTip").html(`您即将要做智能回填的是达人“${darenNameCN}”，请确保当前创作平台登录的是该达人，否则智能回填无法生效。`).show();
+    setTimeout(function() {
+      $("#smartTip").hide();
+      $(".plug-step-win").hide();
+    }, 13 * 1000 * 60)
+    console.log("开始获取配置数据，请稍候。。。")
+    chrome.runtime.sendMessage({
+      greeting: "triggerConfig",
+      head: "tk=" + tk + "&darenId=" + darenId + "&darenName=" + darenName + "&sid=" + sid
+    }, function(response) {
+      // console.log('sucLoginBtn',response)
+      configData = response;
+      console.log('configData:', configData)
+      $("#rollBackData").trigger("click")
+    });
+    // $.ajax({
+    //   url: 'https://sycm.taobao.com/custom/menu/getPersonalView.json',
+    //   // async: false,
+    //   success: function(res) {
+    //     // let ten = tenMin();
+    //     if (res.code == 0) {
+    //
+    //     } else {
+    //       alert('未收到平台确认信息，请重新登录创作平台。');
+    //     }
+    //   }
+    // })
 
   })
   //
   smartSetBtn.addEventListener('eventBySmartSet', function() {
-    //从淘宝获取用户信息判断是否登录
-    $.ajax({
-      url: 'https://sycm.taobao.com/custom/menu/getPersonalView.json',
-      success: function(res) {
-        // let ten = tenMin();
-        if (res.code == 0) {
-          $(".window-panel").height(260)
-          $("#s-step-tip-1").hide();
-          $("#s-step-tip-2").hide();
-          $("#step-login").removeClass("step-current");
-          $("#step-data").addClass("step-current");
-          $(".window-panel").find(".title").find("h3").html('正在智能回填数据');
-          $("#s-step-tip-3").show();
 
-          let darenId = $('#smartSet').attr("data-darenid") || 10000,
-            darenNameCN = $('#smartSet').attr("data-darenname"),
-            darenName = encodeURIComponent(darenNameCN),
-            sid = $('#smartSet').attr("data-sid") || 10000,
-            tk = $('#smartSet').attr("data-token") || 10000;
-          $("#smartTip").html(`您即将要做智能回填的是达人“${darenNameCN}”，请确保当前创作平台登录的是该达人，否则智能回填无法生效。`).show();
-          setTimeout(function() {
-            $("#smartTip").hide();
-            $(".plug-step-win").hide();
-          }, 13 * 1000 * 60)
-          console.log("开始获取配置数据，请稍候。。。")
-          chrome.runtime.sendMessage({
-            greeting: "triggerConfig",
-            head: "tk=" + tk + "&darenId=" + darenId + "&darenName=" + darenName + "&sid=" + sid
-          }, function(response) {
-            configData = response;
-            $("#rollBackData").trigger("click");
-          });
-        }
-      }
-    })
+    $(".window-panel").height(260)
+    $("#s-step-tip-1").hide();
+    $("#s-step-tip-2").hide();
+    $("#step-login").removeClass("step-current");
+    $("#step-data").addClass("step-current");
+    $(".window-panel").find(".title").find("h3").html('正在智能回填数据');
+    $("#s-step-tip-3").show();
+
+    let darenId = $('#smartSet').attr("data-darenid") || 10000,
+      darenNameCN = $('#smartSet').attr("data-darenname"),
+      darenName = encodeURIComponent(darenNameCN),
+      sid = $('#smartSet').attr("data-sid") || 10000,
+      tk = $('#smartSet').attr("data-token") || 10000;
+    $("#smartTip").html(`您即将要做智能回填的是达人“${darenNameCN}”，请确保当前创作平台登录的是该达人，否则智能回填无法生效。`).show();
+    setTimeout(function() {
+      $("#smartTip").hide();
+      $(".plug-step-win").hide();
+    }, 13 * 1000 * 60)
+    console.log("开始获取配置数据，请稍候。。。")
+    chrome.runtime.sendMessage({
+      greeting: "triggerConfig",
+      head: "tk=" + tk + "&darenId=" + darenId + "&darenName=" + darenName + "&sid=" + sid
+    }, function(response) {
+      configData = response;
+      $("#rollBackData").trigger("click");
+    });
+
+    //从淘宝获取用户信息判断是否登录
+    // $.ajax({
+    //   url: 'https://sycm.taobao.com/custom/menu/getPersonalView.json',
+    //   success: function(res) {
+    //     // let ten = tenMin();
+    //     if (res.code == 0) {
+    //
+    //     }
+    //   }
+    // })
   });
   rollBackDataBtn.addEventListener('eventByRollBackData', function() {
     let darenId = $('#smartSet').attr("data-darenid") || 10000,
