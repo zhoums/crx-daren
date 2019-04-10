@@ -15,8 +15,8 @@ let config = {
 }
 
 
-export const app_version = '1.2.2'; //fixed 无法获取达人的账号信息
-export const app_verSeq = 5;
+export const app_version = '1.2.3'; //fixed 多添加3个字段
+export const app_verSeq = 6;
 export const allDataPageSize = 20; //全量获取每页的contentID数目
 
 export default config;

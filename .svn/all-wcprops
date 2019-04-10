@@ -13,7 +13,7 @@ package.json
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svn/media-cms-core/!svn/ver/1591/trunk/code/source/plugin/crx-daren/package.json
+/svn/media-cms-core/!svn/ver/1661/trunk/code/source/plugin/crx-daren/package.json
 END
 crx-daren   prod（内部版本号3，版本号1.2.0 fixed旧版浏览器问题）.zip
 K 25
@@ -49,5 +49,5 @@ manifest.json
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/media-cms-core/!svn/ver/1591/trunk/code/source/plugin/crx-daren/manifest.json
+/svn/media-cms-core/!svn/ver/1661/trunk/code/source/plugin/crx-daren/manifest.json
 END

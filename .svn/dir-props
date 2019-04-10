@@ -1,6 +1,10 @@
 K 10
 svn:ignore
-V 86
+V 430
 crx-daren   dev（内部版本号4，版本号1.2.1 fixed旧版浏览器问题）.zip
+crx-daren   dev（内部版本号6，版本号1.2.3 fixed多加三个字段）.zip
+crx-daren   prod（内部版本号4，版本号1.2.1 fixed旧版浏览器问题）.zip
+crx-daren   prod（内部版本号5，版本号1.2.2 fixed无法获取登录信息）.zip
+crx-daren   prod（内部版本号6，版本号1.2.3 fixed多加三个字段）.zip
 
 END

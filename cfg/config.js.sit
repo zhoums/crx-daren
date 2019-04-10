@@ -21,8 +21,8 @@ let config ={
     min_interval: 25,
 }
 
-export const app_version = '1.1.7'; //add extraHeaders
-export const app_verSeq = 3;
+export const app_version = '1.2.3'; //add extraHeaders
+export const app_verSeq = 6;
 export const allDataPageSize = 20; //全量获取每页的contentID数目
 
 export default config;

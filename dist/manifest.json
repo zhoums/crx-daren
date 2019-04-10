@@ -2,14 +2,14 @@
   "manifest_version": 2,
   "name": "molimediagroup",
   "description": "",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "icons": {
     "16": "images/icon.png",
     "48": "images/icon.png",
     "128": "images/icon.png"
   },
   "browser_action": {
-    "default_title": "molimediagroup 1.2.2",
+    "default_title": "molimediagroup 1.2.3",
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
   },

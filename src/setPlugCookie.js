@@ -410,6 +410,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                     data.content.data.data.forEach((item, ind) => {
                       let _tit = "",
                         contentId = item.contentId || '';
+                      let _publishTime = item.publishTime || '',
+                        _publisherId = item.publisherId || '',
+                        _publisherName = item.publisherName || '';
                       if (item.title) {
                         _tit = item.title;
                       }
@@ -448,18 +451,29 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                             "playCnt": "",
                             "playActualMbrCnt": "",
                             "playTimeAvg": "",
-                            "statDate": ""
+                            "statDate": "",
+
+                            "publishTime": "",
+                            "publisherId": "",
+                            "publisherName": "",
+
                           };
                           for (let paramItem in param) {
                             if (paramItem == 'contentTitle') {
                               param[paramItem] = _tit
                             } else if (paramItem == 'contentUrl') {
                               param[paramItem] = `https://sycm.taobao.com/xsite/daren/contentanalysis/we/content_detail?contentId=${contentId}&contentRelation=O&dateRange=${beginDate}%7C${endDate}&dateType=range&spm=a211nc.11571543.0.0.5e91410cJH1HD1`
+                            } else if (paramItem == 'publishTime') {
+                              param[paramItem] = _publishTime;
+                            } else if (paramItem == 'publisherId') {
+                              param[paramItem] = _publisherId;
+                            } else if (paramItem == 'publisherName') {
+                              param[paramItem] = _publisherName;
                             } else {
                               param[paramItem] = data.content.data[paramItem];
                             }
                           }
-                          // console.log('param', param)
+                          // console.log('param', param, param.publisherName, param.publisherId, param.publishTime)
                           $.ajax({
                             url: `${moli_host}/tb/daren/content/syncContentFullDetail.wb`,
                             async: false,
